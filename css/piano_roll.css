@@ -1,0 +1,131 @@
+body {
+    overflow: hidden;
+}
+#main {
+    position:absolute;
+    height: 89%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#piano_roll {
+    padding: 0;
+    margin: 0;
+    min-width: 90px;
+    max-width: 90px;
+    float: left;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#midi_editor {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#piano_roll .octave,
+#midi_editor .octave {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+#piano_roll .key,
+#midi_editor .row {
+    clear: both;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin: 0px;
+}
+
+
+#piano_roll .key {
+    border-right: 2px solid gray;
+    border-left: 2px solid gray;
+    background-color: #fff;
+}
+#piano_roll .key:hover {
+    background-color: #ddd;
+}
+#piano_roll .sharp.key {
+    background-color: #000;
+}
+#piano_roll .sharp.key:hover {
+    background-color: #555;
+}
+
+#midi_editor {
+    width: calc(100% - 90px);
+    float: left;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+}
+#midi_editor .row:hover .measure,
+#midi_editor .row .measure.hover {
+    background-color: #999;
+}
+
+#midi_editor .measure {
+    border-right: 2px solid gray;
+    margin: 0;
+    height: 100%;
+    display: inline-block;
+    white-space: nowrap;
+}
+#midi_editor .measure:nth-child(odd) {
+    background-color: #9090a9;
+}
+#midi_editor .measure:nth-child(even) {
+    background-color: #80a0b0;
+}
+
+#midi_editor .measure .beat {
+    display: inline-block;
+    margin: 0;
+    border-right: 1px solid darkgray;
+    width: 40px;
+    cursor: pointer;
+}
+#midi_editor .measure .beat:hover {
+    background-color: #dddd88;
+}
+
+#midi_editor .note {
+    position: absolute;
+    background: deepskyblue;
+    border: 1px solid black;
+}
+#midi_editor .note:hover {
+    background-color: #00498f;
+    cursor: move;
+}
+#midi_editor .note.selected {
+    border: 4px solid #dddd88;
+}
+
+#midi_editor .octave {
+
+}
+#midi_editor .key {
+    white-space: nowrap;
+}
+
+#horizontalZoomSelector {
+    width: 200px;
+    display: inline-block;
+}
+#verticalZoomSelector {
+    width: 200px;
+    display: inline-block;
+}
